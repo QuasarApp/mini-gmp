@@ -50,7 +50,7 @@ see https://www.gnu.org/licenses/.  */
 
 #include "mini-gmp.h"
 
-
+
 /* Macros */
 #define GMP_LIMB_BITS (sizeof(mp_limb_t) * CHAR_BIT)
 
@@ -240,7 +240,7 @@ see https://www.gnu.org/licenses/.  */
 
 const int mp_bits_per_limb = GMP_LIMB_BITS;
 
-
+
 /* Memory allocation and other helper functions. */
 static void
 gmp_die (const char *msg)
@@ -266,6 +266,8 @@ gmp_default_alloc (size_t size)
 static void *
 gmp_default_realloc (void *old, size_t old_size, size_t new_size)
 {
+  UN_USED(old_size);
+
   void * p;
 
   p = realloc (old, new_size);
@@ -279,6 +281,7 @@ gmp_default_realloc (void *old, size_t old_size, size_t new_size)
 static void
 gmp_default_free (void *p, size_t size)
 {
+  UN_USED(size);
   free (p);
 }
 
