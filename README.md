@@ -20,7 +20,7 @@
 
 # Include
 
-## for qmake projects 
+## For qmake projects 
 
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
@@ -29,7 +29,7 @@
   >> include($$PWD/QtBigInt/GMP.pri)
  * Rebuild yuor project
 
-## for other build system
+## For other build system
  
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
