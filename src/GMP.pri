@@ -19,3 +19,4 @@ unix:LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 win32:LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 
 include(GMPIncudePah.pri)
+include(ccache.pri);

@@ -36,3 +36,4 @@ HEADERS += \
 SOURCES += \
     bigint.cpp \
     mini-gmp.c
+include(ccache.pri);
