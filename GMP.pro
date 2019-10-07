@@ -11,12 +11,17 @@ CONFIG += ordered
 SUBDIRS += \
            src
 
-include($$PWD/tests/test.pri)
+gcc {
+    lessThan (QT_MINOR_VERSION, 12) {
+        message(disable tests!)
+    } else {
+        include($$PWD/tests/test.pri)
+        message(enabled tests!)
+        SUBDIRS += tests
+        SUBDIRS += tests
+        tests.file = tests/tests.pro
+    }
+}
 
 src.file = src/GMP.pro
 
-gcc {
-    SUBDIRS += tests
-    tests.file = tests/tests.pro
-
-}
