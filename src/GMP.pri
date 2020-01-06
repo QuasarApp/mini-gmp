@@ -18,8 +18,12 @@ CONFIG(release, debug|release): {
 lessThan (QT_MINOR_VERSION, 14): {
     LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 } else {
-    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
-    android: LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+    LIBTENP=
+
+    LIBTENP = -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
+    android: LIBTENP = -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+    LIBS += $$LIBTENP
+
 }
 
 
