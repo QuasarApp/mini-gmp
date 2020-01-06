@@ -14,9 +14,12 @@ CONFIG(release, debug|release): {
 } else {
     MINIGMP_LIBRARY_OUTPUT_DIR="$$PWD/build/debug"
 }
-unix:LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 
-win32:LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
+!isEmpty(QT_ARCH): {
+    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+} else {
+    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
+}
 
 include(GMPIncudePah.pri)
 include(ccache.pri);
