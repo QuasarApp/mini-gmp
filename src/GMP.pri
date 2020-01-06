@@ -15,10 +15,14 @@ CONFIG(release, debug|release): {
     MINIGMP_LIBRARY_OUTPUT_DIR="$$PWD/build/debug"
 }
 
-!isEmpty(QT_ARCH): {
-    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+lessThan (QT_MINOR_VERSION, 14) {
+    unix: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt
+    win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
 } else {
-    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
+    unix:android: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+    unix:!android: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt
+
+    win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
 }
 
 include(GMPIncudePah.pri)
