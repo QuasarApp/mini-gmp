@@ -8,7 +8,6 @@
 
 QT       -= core gui
 
-TARGET = MiniGMP
 TEMPLATE = lib
 
 DEFINES += MINIGMP_LIBRARY

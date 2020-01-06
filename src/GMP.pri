@@ -15,7 +15,7 @@ CONFIG(release, debug|release): {
     MINIGMP_LIBRARY_OUTPUT_DIR="$$PWD/build/debug"
 }
 
-lessThan (QT_MINOR_VERSION, 14) {
+lessThan (QT_MINOR_VERSION, 14): {
     unix: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt
     win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
 } else {
@@ -24,6 +24,8 @@ lessThan (QT_MINOR_VERSION, 14) {
 
     win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
 }
+
+message($$LIBS)
 
 include(GMPIncudePah.pri)
 include(ccache.pri);
