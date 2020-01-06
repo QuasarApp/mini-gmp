@@ -16,16 +16,12 @@ CONFIG(release, debug|release): {
 }
 
 lessThan (QT_MINOR_VERSION, 14): {
-    unix: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt
-    win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
+    LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 } else {
-    unix:android: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
-    unix:!android: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt
-
-    win32: LIBS += -L$$Qt_SECRET_LIB_OUTPUT_DIR -lQtBigInt1
+    android: LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+    !android: LIBS += -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
 }
 
-message($$LIBS)
 
 include(GMPIncudePah.pri)
 include(ccache.pri);
