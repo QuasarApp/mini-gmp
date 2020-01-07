@@ -20,6 +20,8 @@ lessThan (QT_MINOR_VERSION, 14): {
 } else {
     LIBTENP = -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt
     android: LIBTENP = -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt_$$QT_ARCH
+    win32: LIBTENP = -L$$MINIGMP_LIBRARY_OUTPUT_DIR -lQtBigInt6
+
     LIBS += $$LIBTENP
 }
 
