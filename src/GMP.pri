@@ -27,6 +27,8 @@ lessThan (QT_MINOR_VERSION, 14): {
     LIBS += $$LIBTENP
 }
 
+message(LIBS = $$LIBS)
+
 
 include(GMPIncudePah.pri)
 include(ccache.pri);
