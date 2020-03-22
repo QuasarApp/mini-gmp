@@ -74,9 +74,9 @@ public:
     friend BigInt MINIGMPSHARED_EXPORT operator + ( intMpz left, BigInt right);
     friend BigInt MINIGMPSHARED_EXPORT operator + ( const std::string &left, const BigInt &right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator += ( BigInt &left, intMpz right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator += ( BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator += ( BigInt &left, const std::string &right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator += ( BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator += ( BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator += ( BigInt &left, const std::string &right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator - ( BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator - ( BigInt left, intMpz right);
@@ -87,10 +87,10 @@ public:
 
     friend BigInt MINIGMPSHARED_EXPORT operator-(BigInt val);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator -= ( BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator -= ( BigInt &left, intMpz right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator -= ( BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator -= ( BigInt &left, const std::string &right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator -= ( BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator -= ( BigInt &left, const std::string &right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator / ( BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator / ( BigInt left, const std::string &right);
@@ -98,9 +98,9 @@ public:
     friend BigInt MINIGMPSHARED_EXPORT operator / ( intMpz left, BigInt right);
     friend BigInt MINIGMPSHARED_EXPORT operator / ( const std::string &left, const BigInt &right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator /= ( BigInt &left, intMpz right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator /= ( BigInt &left, const std::string &right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator /= ( BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator /= ( BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator /= ( BigInt &left, const std::string &right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator /= ( BigInt &left, const BigInt& right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator * ( BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator * ( BigInt left, const std::string &right);
@@ -108,9 +108,9 @@ public:
 
     friend BigInt MINIGMPSHARED_EXPORT operator * ( intMpz left, BigInt right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator *= ( BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator *= ( BigInt &left, intMpz right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator *= ( BigInt &left, const std::string &right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator *= ( BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator *= ( BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator *= ( BigInt &left, const std::string &right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator % ( BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator % ( BigInt left, const std::string &right);
@@ -119,16 +119,16 @@ public:
     friend BigInt MINIGMPSHARED_EXPORT operator % ( intMpz left, BigInt right);
     friend BigInt MINIGMPSHARED_EXPORT operator % ( const std::string & left, const BigInt &right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator %= ( BigInt &left, intMpz right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator %= ( BigInt &left, const std::string &right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator %= ( BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator %= ( BigInt &left, const std::string &right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator %= ( BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator %= ( BigInt &left, const BigInt& right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator << ( BigInt left, int right);
     friend BigInt MINIGMPSHARED_EXPORT operator >> ( BigInt left, int right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator <<= ( BigInt &left, int right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator >>= ( BigInt &left, int right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator <<= ( BigInt &left, int right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator >>= ( BigInt &left, int right);
 
     friend bool MINIGMPSHARED_EXPORT operator == ( const BigInt& left, const BigInt& right);
     friend bool MINIGMPSHARED_EXPORT operator == ( const BigInt& left, intMpz right);
@@ -186,20 +186,20 @@ public:
     friend BigInt MINIGMPSHARED_EXPORT operator| (BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator| (const BigInt &left, intMpz right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator|= (BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator|= (BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator|= (BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator|= (BigInt &left, intMpz right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator& (BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator& (const BigInt &left, intMpz right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator&= (BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator&= (BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator&= (BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator&= (BigInt &left, intMpz right);
 
     friend BigInt MINIGMPSHARED_EXPORT operator^ (BigInt left, const BigInt& right);
     friend BigInt MINIGMPSHARED_EXPORT operator^ (const BigInt &left, intMpz right);
 
-    friend BigInt& MINIGMPSHARED_EXPORT operator^= (BigInt &left, const BigInt& right);
-    friend BigInt& MINIGMPSHARED_EXPORT operator^= (BigInt &left, intMpz right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator^= (BigInt &left, const BigInt& right);
+    friend BigInt MINIGMPSHARED_EXPORT & operator^= (BigInt &left, intMpz right);
 
 };
 
