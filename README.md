@@ -1,7 +1,7 @@
 
 # ![QtBigInt Logo](res/png/QtBigIntLogo2.png)
 
-**QtBigInt** - Arbitrary-sized integer class for C++ and build system of Qt (qmake). Power by minigmp.
+**QtBigInt** - Arbitrary-sized integer class for C++ and build system qmake and cmake. Power by minigmp.
 
 
 # Features
@@ -23,9 +23,9 @@
 ## For qmake projects 
 
  * cd yourRepo
- * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
- * git submodule update --init --update
- * Include in your pro file the pri file of Qt-Secret library
+ * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
+ * git submodule update --init --recursive
+ * Include in your pro file the pri file of QtBigInt library
   >> include($$PWD/QtBigInt/GMP.pri)
  * Rebuild yuor project
 
@@ -33,9 +33,9 @@
 #### The cmake build do not required Qt libraries. 
  
  * cd yourRepo
- * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
- * git submodule update --init --update
- * Include in your CMakeLists.txt file the main CMakeLists.txt file of Qt-Secret library
+ * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
+ * git submodule update --init --recursive
+ * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
   >> include(QtBigInt)
  * Disable Building of tests (because tests requariend qt libraries). Add befor incuding of QtBigInt next line :
   >> set(WITHOUT_TESTS 1)
@@ -49,9 +49,9 @@ include(QtBigInt)
 ## For other build system
  
  * cd yourRepo
- * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
- * git submodule update --init --update
- * Add the rule for build Qt-Secret
+ * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
+ * git submodule update --init --recursive
+ * Add the rule for build QtBigInt
  * Add INCLUDEPATH and LIBS for your build system 
  * Rebuild yuor project
 
