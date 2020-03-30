@@ -29,6 +29,24 @@
   >> include($$PWD/QtBigInt/GMP.pri)
  * Rebuild yuor project
 
+## For cmake build system
+ #### comment
+The cmake build do not required Qt libraries. 
+ 
+ * cd yourRepo
+ * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
+ * git submodule update --init --update
+ * Include in your CMakeLists.txt file the main CMakeLists.txt file of Qt-Secret library
+  >> include(QtBigInt)
+ * Disable Building of tests (because tests requariend qt libraries). Add befor incuding of QtBigInt next line :
+  >> set(WITHOUT_TESTS 1)
+ * Rebuild yuor project
+
+``` cmake
+set(WITHOUT_TESTS 1)
+include(QtBigInt)
+```
+
 ## For other build system
  
  * cd yourRepo
