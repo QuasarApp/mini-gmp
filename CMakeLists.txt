@@ -15,4 +15,9 @@ initAll()
 
 # Add sub directories
 add_subdirectory(src)
-add_subdirectory(tests)
+
+if(DEFINED WITHOUT_TESTS)
+    message("conigured without tests")
+else()
+    add_subdirectory(tests)
+endif()
