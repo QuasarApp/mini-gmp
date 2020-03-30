@@ -29,7 +29,7 @@
   >> include($$PWD/QtBigInt/GMP.pri)
  * Rebuild yuor project
 
-## For cmake build system
+## For cmake projects
  #### comment
 The cmake build do not required Qt libraries. 
  
