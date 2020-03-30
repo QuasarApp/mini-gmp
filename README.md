@@ -30,8 +30,7 @@
  * Rebuild yuor project
 
 ## For cmake projects
- #### comment
-The cmake build do not required Qt libraries. 
+#### The cmake build do not required Qt libraries. 
  
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of Qt-Secret into your repo like submodule
