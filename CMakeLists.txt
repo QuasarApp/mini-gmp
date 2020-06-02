@@ -5,19 +5,24 @@
 # of this license document, but changing it is not allowed.
 #
 
-cmake_minimum_required(VERSION 3.1)
-project(MainQtBigint)
+cmake_minimum_required(VERSION 3.10)
+project(QtBigint LANGUAGES CXX)
+if(TARGET ${PROJECT_NAME})
+  message("The ${PROJECT_NAME} arledy included in main Project")
+  return()
+endif()
 
 include(CMake/ccache.cmake)
 include(CMake/QuasarAppCITargets.cmake)
 
-initAll()
 
 # Add sub directories
 add_subdirectory(src)
 
-if(DEFINED WITHOUT_TESTS)
-    message("conigured without tests")
-else()
+find_library(QT Qt5Core)
+
+if(EXISTS ${QT})
     add_subdirectory(tests)
-endif()
+endif(EXISTS ${QT})
+
+initAll()

@@ -4,6 +4,8 @@
 # Prerequisites
 *.d
 
+*Testing/*
+
 # Object files
 *.o
 *.ko
