@@ -1,5 +1,5 @@
 
-# ![QtBigInt Logo](res/png/QtBigIntLogo2.png)
+# ![QtBigInt Logo](res/png/QtBigint Banner.png)
 
 **QtBigInt** - Arbitrary-sized integer class for C++ and build system qmake and cmake. Power by minigmp.
 
