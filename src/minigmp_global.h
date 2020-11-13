@@ -12,7 +12,7 @@
 #  define MINIGMPSHARED_EXPORT __declspec(dllexport)
 #endif
 
-#if defined (linux) || defined (__APPLE__)
+#if defined (linux) || defined (__linux__) || defined (__APPLE__)
 #  define MINIGMPSHARED_EXPORT __attribute__((visibility("default")))
 #endif
 
