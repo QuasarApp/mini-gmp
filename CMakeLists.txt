@@ -19,10 +19,12 @@ include(CMake/QuasarAppCITargets.cmake)
 # Add sub directories
 add_subdirectory(src)
 
-find_library(QT Qt5Core)
 
-if(EXISTS ${QT})
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
+
+if(${QT_VERSION_MAJOR})
     add_subdirectory(tests)
-endif(EXISTS ${QT})
+endif(${QT_VERSION_MAJOR})
 
 initAll()

@@ -17,14 +17,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Core Test REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Test REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Test REQUIRED)
 
 file(GLOB SOURCE_CPP
     "*.cpp"
 )
 
 add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
-target_link_libraries(${CURRENT_PROJECT} PRIVATE Qt5::Core Qt5::Test QtBigint)
+target_link_libraries(${CURRENT_PROJECT} PRIVATE Qt::Core Qt::Test QtBigint)
 target_include_directories(${CURRENT_PROJECT} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 initTests()
