@@ -50,7 +50,7 @@ add_subdirectory(QtBigInt)
 By Default QtBigInt makes as a static library. If you want to create a shared library just add the BUILD_SHARED_LIBS into your main CMakeLists.txt file.
 Example :
 
-```
+``` cmake
 set(BUILD_SHARED_LIBS ON)
 set(WITHOUT_TESTS 1)
 add_subdirectory(QtBigInt)
