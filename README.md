@@ -44,6 +44,7 @@
 ``` cmake
 set(WITHOUT_TESTS 1)
 add_subdirectory(QtBigInt)
+target_link_libraries(MyBinary PUBLIC QtBigInt)
 ```
 
 ### Note 
@@ -54,6 +55,8 @@ Example :
 set(BUILD_SHARED_LIBS ON)
 set(WITHOUT_TESTS 1)
 add_subdirectory(QtBigInt)
+target_link_libraries(MyBinary PUBLIC QtBigInt)
+
 ```
 
 ## For other build system  
