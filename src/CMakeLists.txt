@@ -19,7 +19,7 @@ file(GLOB SOURCE_CPP
 )
 set_source_files_properties(mini-gmp.c PROPERTIES LANGUAGE CXX )
 
-add_library(${CURRENT_PROJECT} SHARED ${SOURCE_CPP})
+add_library(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersion(6 1 2)
