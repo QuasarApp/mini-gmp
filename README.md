@@ -26,7 +26,7 @@
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
  * git submodule update --init --recursive
  * Include in your pro file the pri file of QtBigInt library
-  >> include($$PWD/QtBigInt/GMP.pri)
+    >>include($$PWD/QtBigInt/GMP.pri)
  * Rebuild yuor project
 
 ## For cmake projects
@@ -35,18 +35,27 @@
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
  * git submodule update --init --recursive
- * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
-  >> include(QtBigInt)
  * Disable Building of tests (because tests requariend qt libraries). Add befor incuding of QtBigInt next line :
   >> set(WITHOUT_TESTS 1)
+ * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
+  >> add_subdirectory(QtBigInt)
  * Rebuild yuor project
 
 ``` cmake
 set(WITHOUT_TESTS 1)
-include(QtBigInt)
+add_subdirectory(QtBigInt)
 ```
 
-## For other build system
+### Note 
+By Default QtBigInt makes as a static library. If you want to create a shared library just add the BUILD_SHARED_LIBS into your main CMakeLists.txt file.
+Example :
+```
+set(BUILD_SHARED_LIBS ON)
+set(WITHOUT_TESTS 1)
+add_subdirectory(QtBigInt)
+```
+
+## For other build system  
  
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
