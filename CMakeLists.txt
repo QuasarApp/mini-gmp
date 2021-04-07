@@ -19,13 +19,34 @@ include(CMake/QuasarAppCITargets.cmake)
 # Add sub directories
 add_subdirectory(src)
 
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core QUIET)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core QUIET)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
+if (NOT DEFINED BIGINT_TESTS)
+    set(BIGINT_TESTS ON)
 
-if(${QT_VERSION_MAJOR})
+    if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
+        if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
+            set(BIGINT_TESTS OFF)
+        endif()
+    endif()
+
+    if (ANDROID)
+        set(BIGINT_TESTS OFF)
+    endif()
+
+    if (NOT QT_VERSION_MAJOR)
+        set(BIGINT_TESTS OFF)
+    endif()
+endif()
+
+
+if (BIGINT_TESTS)
     add_subdirectory(tests)
-endif(${QT_VERSION_MAJOR})
+else()
+    message("The ${PROJECT_NAME} tests is disabled.")
+endif()
+
 
 initAll()
 
