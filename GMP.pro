@@ -13,3 +13,5 @@ SUBDIRS += \
 
 src.file = src/GMP.pro
 
+QMAKE_EXTRA_TARGETS += \
+    test
