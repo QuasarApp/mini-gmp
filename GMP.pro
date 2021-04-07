@@ -11,7 +11,7 @@ CONFIG += ordered
 SUBDIRS += \
            src
 
-gcc {
+gcc: !android: {
     lessThan (QT_MINOR_VERSION, 12) {
         message(disable tests!)
     } else {
