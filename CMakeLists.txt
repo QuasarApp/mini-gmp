@@ -28,3 +28,6 @@ if(${QT_VERSION_MAJOR})
 endif(${QT_VERSION_MAJOR})
 
 initAll()
+
+addDoc(${PROJECT_NAME}Docs ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
+
