@@ -11,17 +11,5 @@ CONFIG += ordered
 SUBDIRS += \
            src
 
-gcc: !android: {
-    lessThan (QT_MINOR_VERSION, 12) {
-        message(disable tests!)
-    } else {
-        include($$PWD/tests/test.pri)
-        message(enabled tests!)
-        SUBDIRS += tests
-        SUBDIRS += tests
-        tests.file = tests/tests.pro
-    }
-}
-
 src.file = src/GMP.pro
 
