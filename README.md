@@ -27,7 +27,7 @@
  * git submodule update --init --recursive
  * Include in your pro file the pri file of QtBigInt library
     >>include($$PWD/QtBigInt/GMP.pri)
- * Rebuild yuor project
+ * Rebuild your project
 
 ## For cmake projects
 #### The cmake build do not required Qt libraries. 
@@ -39,7 +39,7 @@
   >> set(WITHOUT_TESTS 1)
  * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
   >> add_subdirectory(QtBigInt)
- * Rebuild yuor project
+ * Rebuild your project
 
 ``` cmake
 set(WITHOUT_TESTS 1)
@@ -66,7 +66,7 @@ target_link_libraries(MyBinary PUBLIC QtBigInt)
  * git submodule update --init --recursive
  * Add the rule for build QtBigInt
  * Add INCLUDEPATH and LIBS for your build system 
- * Rebuild yuor project
+ * Rebuild your project
 
 
 # Usage
