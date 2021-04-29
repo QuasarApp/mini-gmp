@@ -10,10 +10,10 @@
 
 #ifdef _WIN32
 #  define MINIGMPSHARED_EXPORT __declspec(dllexport)
-#endif
-
-#if defined (linux) || defined (__linux__) || defined (__APPLE__)
+#elif (linux) || defined (__linux__) || defined (__APPLE__)
 #  define MINIGMPSHARED_EXPORT __attribute__((visibility("default")))
+#else
+#  define MINIGMPSHARED_EXPORT
 #endif
 
 

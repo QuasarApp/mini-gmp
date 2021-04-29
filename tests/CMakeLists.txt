@@ -9,7 +9,6 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CURRENT_PROJECT ${PROJECT_NAME}Test)
 
-include(../CMake/ProjectOut.cmake)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
