@@ -10,9 +10,6 @@ set(CURRENT_PROJECT ${PROJECT_NAME})
 
 project(QtBigint LANGUAGES CXX)
 
-include(../CMake/ProjectOut.cmake)
-include(../CMake/Version.cmake)
-
 file(GLOB SOURCE_CPP
     "*.cpp"
     "mini-gmp.c"

@@ -12,12 +12,9 @@ if(TARGET ${PROJECT_NAME})
   return()
 endif()
 
-include(CMake/ccache.cmake)
-include(CMake/QuasarAppCITargets.cmake)
+include(CMake/QuasarApp.cmake)
+include(CMake/Version.cmake)
 
-
-# Add sub directories
-add_subdirectory(src)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core QUIET)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core QUIET)
@@ -40,6 +37,8 @@ if (NOT DEFINED BIGINT_TESTS)
     endif()
 endif()
 
+
+add_subdirectory(src)
 
 if (BIGINT_TESTS)
     add_subdirectory(tests)
