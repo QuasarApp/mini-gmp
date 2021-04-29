@@ -10,6 +10,9 @@ set(CURRENT_PROJECT ${PROJECT_NAME})
 
 project(QtBigint LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 file(GLOB SOURCE_CPP
     "*.cpp"
     "mini-gmp.c"
