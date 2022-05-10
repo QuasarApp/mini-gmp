@@ -35,7 +35,7 @@
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
  * git submodule update --init --recursive
- * Disable Building of tests (because tests requiere Qt libraries). Add before incuding of QtBigInt next line :
+ * Disable Building of tests (because tests require Qt libraries). Add before incuding of QtBigInt next line :
   >> set(WITHOUT_TESTS 1)
  * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
   >> add_subdirectory(QtBigInt)
