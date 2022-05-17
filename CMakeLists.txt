@@ -28,7 +28,7 @@ if (NOT DEFINED BIGINT_TESTS)
         endif()
     endif()
 
-    if (ANDROID)
+    if (ANDROID OR IOS)
         set(BIGINT_TESTS OFF)
     endif()
 
