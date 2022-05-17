@@ -35,7 +35,7 @@
  * cd yourRepo
  * git submodule add https://github.com/QuasarApp/QtBigInt.git # add the repository of QtBigInt into your repo like submodule
  * git submodule update --init --recursive
- * Disable Building of tests (because tests requariend qt libraries). Add befor incuding of QtBigInt next line :
+ * Disable Building of tests (because tests require Qt libraries). Add before incuding of QtBigInt next line :
   >> set(WITHOUT_TESTS 1)
  * Include in your CMakeLists.txt file the main CMakeLists.txt file of QtBigInt library
   >> add_subdirectory(QtBigInt)
@@ -78,6 +78,6 @@ Create objects of the BigInt class, and do what you got to do!
 BigInt big1 = 1234567890, big2;
 big2 = "9876543210123456789098765432101234567890";
 
-std::cout << (big1 * big2 * 123456).getSring() << "\n";
+std::cout << (big1 * big2 * 123456).getString() << "\n";
 // Output: 1505331490682966620443288524512589666204282352096057600
 ```
